@@ -4,11 +4,10 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about'     => 'pages#about'
   get 'privacy'   => 'pages#privacy'
-  get 'login'     => 'devise/sessions#new'
-  post 'login'    => 'devise/sessions#create'
-  delete 'logout' => 'devise/sessions#destroy'
-  get 'signup'    => 'devise/registrations#new'
-  devise_for :user
+
+  devise_for :users, :path => 'account',
+             :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
