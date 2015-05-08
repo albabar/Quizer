@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
   root 'pages#home'
-  get 'about' => 'pages#about'
-  get 'privacy' => 'pages#privacy'
-  get 'login' => 'auth#create'
-  delete 'logout' => 'auth#destroy'
-  get 'signup' => 'users#create'
+  get 'about'     => 'pages#about'
+  get 'privacy'   => 'pages#privacy'
+  get 'login'     => 'devise/sessions#new'
+  post 'login'    => 'devise/sessions#create'
+  delete 'logout' => 'devise/sessions#destroy'
+  get 'signup'    => 'devise/registrations#new'
+  devise_for :user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
