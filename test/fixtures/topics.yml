@@ -2,18 +2,18 @@
 
 one:
   title: MyString
-  user_id: 
+  user_id:
   summary: MyString
   description: MyText
   prerequisites_detail: MyText
-  prerequisites_topic_id: 
+  prerequisites_topic_id:
   passmark: 1
 
 two:
   title: MyString
-  user_id: 
+  user_id:
   summary: MyString
   description: MyText
   prerequisites_detail: MyText
-  prerequisites_topic_id: 
+  prerequisites_topic_id:
   passmark: 1

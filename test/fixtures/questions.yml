@@ -2,7 +2,7 @@
 
 one:
   title: MyString
-  topic_id: 
+  topic_id:
   explanation: MyText
   option_a: MyString
   option_b: MyString
@@ -12,7 +12,7 @@ one:
 
 two:
   title: MyString
-  topic_id: 
+  topic_id:
   explanation: MyText
   option_a: MyString
   option_b: MyString
