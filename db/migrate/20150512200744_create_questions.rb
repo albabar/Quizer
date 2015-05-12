@@ -1,7 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration
   def change
     create_table :questions do |t|
-      t.string :title
+      t.string :title, unique: true
       t.references :topic, index: true, foreign_key: true
       t.text :explanation
       t.string :option_a
