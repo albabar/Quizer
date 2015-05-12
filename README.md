@@ -1,7 +1,8 @@
-#InoiceApp / Arve / Arve.io
-### A simple invoice sending solution for freelancers
+#Quizer
+### Online app for MCA test.
+Built with Ruby on Rails. This might be used by the teachers, coaching centers and any other educational instutions.
 
-This is under Development.
+Project is under Development.
 
 Technologies used:
 * Ruby 2.2
