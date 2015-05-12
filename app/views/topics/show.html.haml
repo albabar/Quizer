@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @topic.title
+%p
+  %b User:
+  = @topic.user
+%p
+  %b Summary:
+  = @topic.summary
+%p
+  %b Description:
+  = @topic.description
+%p
+  %b Prerequisites detail:
+  = @topic.prerequisites_detail
+%p
+  %b Prerequisites topic:
+  = @topic.prerequisites_topic
+%p
+  %b Passmark:
+  = @topic.passmark
+
+= link_to 'Edit', edit_topic_path(@topic)
+\|
+= link_to 'Back', topics_path

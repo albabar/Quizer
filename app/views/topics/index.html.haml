@@ -1,0 +1,33 @@
+%h1 Listing topics
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th User
+      %th Summary
+      %th Description
+      %th Prerequisites detail
+      %th Prerequisites topic
+      %th Passmark
+      %th
+      %th
+      %th
+
+  %tbody
+    - @topics.each do |topic|
+      %tr
+        %td= topic.title
+        %td= topic.user
+        %td= topic.summary
+        %td= topic.description
+        %td= topic.prerequisites_detail
+        %td= topic.prerequisites_topic
+        %td= topic.passmark
+        %td= link_to 'Show', topic
+        %td= link_to 'Edit', edit_topic_path(topic)
+        %td= link_to 'Destroy', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Topic', new_topic_path
