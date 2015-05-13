@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  user_id:
-  summary: MyString
-  description: MyText
-  prerequisites_detail: MyText
+  title: Ruby MCQ
+  user_id: 2
+  summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi debitis deleniti excepturi, exercitationem illo laudantium, maiores necessitatibus nulla, odio placeat provident quam repudiandae similique sunt. Nisi obcaecati pariatur similique.
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi debitis deleniti excepturi, exercitationem illo laudantium, maiores necessitatibus nulla, odio placeat provident quam repudiandae similique sunt. Nisi obcaecati pariatur similique.
+  prerequisites_detail:
   prerequisites_topic_id:
-  passmark: 1
+  passmark: 70
 
 two:
-  title: MyString
-  user_id:
-  summary: MyString
-  description: MyText
-  prerequisites_detail: MyText
+  title: Rails MCQ
+  user_id: 2
+  summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi debitis deleniti excepturi.
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi debitis deleniti excepturi, exercitationem illo laudantium, maiores necessitatibus nulla, odio placeat provident quam repudiandae similique sunt. Nisi obcaecati pariatur similique.
+  prerequisites_detail:
   prerequisites_topic_id:
-  passmark: 1
+  passmark: 80
