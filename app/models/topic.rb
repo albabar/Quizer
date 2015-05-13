@@ -8,4 +8,9 @@ class Topic < ActiveRecord::Base
 
   #Validation rules
   validates :title, presence: true
+
+  #Set a default passmark
+  after_find do
+    self.passmark ||= 60
+  end
 end
