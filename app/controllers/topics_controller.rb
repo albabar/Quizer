@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
   # GET /topics/new
   def new
     @topic = Topic.new
+    5.times { @topic.questions.build }
   end
 
   # GET /topics/1/edit
@@ -69,6 +70,7 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :user_id, :summary, :description, :prerequisites_detail, :prerequisites_topic_id, :passmark)
+      params.require(:topic).permit(:title, :user_id, :summary, :description, :prerequisites_detail, :prerequisites_topic_id, :passmark,
+                                    :questions_attributes => [:id, :title, :option_a, :option_b, :option_c, :option_d, :answer])
     end
 end

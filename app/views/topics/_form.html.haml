@@ -23,9 +23,38 @@
     = f.text_area :prerequisites_detail
   .field
     = f.label :prerequisites_topic
-    = f.collection_select(:prerequisites_topic_id, Topic.all, :id, :title)
+    = f.collection_select(:prerequisites_topic_id, [Topic.new(title: 'None')] + Topic.all, :id, :title)
   .field
     = f.label :passmark
     = f.number_field :passmark
+  %table
+    %thead
+      %tr
+        %th Question
+        %th Option A
+        %th Option B
+        %th Option C
+        %th Option D
+        %th Answer
+        %th Delete?
+    %tbody
+      = f.fields_for :questions do |ff|
+        %tr
+          %td
+            = ff.text_field :title
+          %td
+            = ff.text_field :option_a
+          %td
+            = ff.text_field :option_b
+          %td
+            = ff.text_field :option_c
+          %td
+            = ff.text_field :option_d
+          %td
+            = ff.select :answer, [['Choose one', nil], ['Option A', 'a'], ['Option B', 'b'], ['Option C', 'c'], ['Option D', 'd']]
+          %td
+            - if ff.object.persisted?
+              = ff.check_box :_destroy
+
   .actions
     = f.submit 'Save'
