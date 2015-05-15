@@ -15,9 +15,11 @@
 %p
   %b Prerequisites detail:
   = @topic.prerequisites_detail
-%p
-  %b Prerequisites topic:
-  = @topic.prerequisites_topic
+- unless @topic.prerequisites_topic.blank?
+  %p
+    %b Prerequisites topic:
+    = link_to @topic.prerequisites_topic.title, @topic.prerequisites_topic
+
 %p
   %b Passmark:
   = @topic.passmark

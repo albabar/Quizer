@@ -23,7 +23,7 @@
     = f.text_area :prerequisites_detail
   .field
     = f.label :prerequisites_topic
-    = f.text_field :prerequisites_topic
+    = f.collection_select(:prerequisites_topic_id, Topic.all, :id, :title)
   .field
     = f.label :passmark
     = f.number_field :passmark
