@@ -1,0 +1,5 @@
+.question
+  = question.title
+  - form_for([@topic, question]) do |f|
+    = f.submit 'Update', :class => 'button ok'
+  end

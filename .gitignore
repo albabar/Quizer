@@ -19,3 +19,4 @@
 # RubyMine and OSX
 .idea/
 .DS_Store
+.*.swp

@@ -1,0 +1,60 @@
+= form_for @topic do |f|
+  - if @topic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
+      %ul
+        - @topic.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :summary
+    = f.text_field :summary
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :prerequisites_detail
+    = f.text_area :prerequisites_detail
+  .field
+    = f.label :prerequisites_topic
+    = f.collection_select(:prerequisites_topic_id, [Topic.new(title: 'None')] + Topic.all, :id, :title)
+  .field
+    = f.label :passmark
+    = f.number_field :passmark
+  %table
+    %thead
+      %tr
+        %th Question
+        %th Option A
+        %th Option B
+        %th Option C
+        %th Option D
+        %th Answer
+        %th Delete?
+    %tbody
+      = f.fields_for :questions do |ff|
+        %tr
+          %td
+            = ff.text_field :title
+          %td
+            = ff.text_field :option_a
+          %td
+            = ff.text_field :option_b
+          %td
+            = ff.text_field :option_c
+          %td
+            = ff.text_field :option_d
+          %td
+            = ff.select :answer, [['Choose one', nil], ['Option A', 'a'], ['Option B', 'b'], ['Option C', 'c'], ['Option D', 'd']]
+          %td
+            - if ff.object.persisted?
+              = ff.check_box :_destroy
+
+  .actions
+    = f.submit 'Save'

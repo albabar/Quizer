@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :topics do
+      resources :questions
+  end
+
   root 'pages#home'
   get 'about'     => 'pages#about'
   get 'privacy'   => 'pages#privacy'
