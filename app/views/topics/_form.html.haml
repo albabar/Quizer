@@ -6,28 +6,29 @@
         - @topic.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .form-group
     = f.label :title
-    = f.text_field :title
-  .field
+    = f.text_field :title, class: 'form-control'
+  .form-group
     = f.label :user
-    = f.text_field :user
-  .field
+    = f.text_field :user, class: 'form-control'
+  .form-group
     = f.label :summary
-    = f.text_field :summary
-  .field
+    = f.text_field :summary, class: 'form-control'
+  .form-group
     = f.label :description
-    = f.text_area :description
-  .field
+    = f.text_area :description, class: 'form-control'
+  .form-group
     = f.label :prerequisites_detail
-    = f.text_area :prerequisites_detail
-  .field
+    = f.text_area :prerequisites_detail, class: 'form-control'
+  .form-group
     = f.label :prerequisites_topic
-    = f.collection_select(:prerequisites_topic_id, [Topic.new(title: 'None')] + Topic.all, :id, :title)
-  .field
+    = f.collection_select(:prerequisites_topic_id, [Topic.new(title: 'None')] + Topic.all,
+       :id, :title, {}, {class: 'form-control'})
+  .form-group
     = f.label :passmark
-    = f.number_field :passmark
-  %table
+    = f.number_field :passmark, class: 'form-control'
+  %table.table.table-striped
     %thead
       %tr
         %th Question
@@ -40,21 +41,23 @@
     %tbody
       = f.fields_for :questions do |ff|
         %tr
-          %td
-            = ff.text_field :title
-          %td
-            = ff.text_field :option_a
-          %td
-            = ff.text_field :option_b
-          %td
-            = ff.text_field :option_c
-          %td
-            = ff.text_field :option_d
-          %td
-            = ff.select :answer, [['Choose one', nil], ['Option A', 'a'], ['Option B', 'b'], ['Option C', 'c'], ['Option D', 'd']]
-          %td
+          %td.form-group
+            = ff.text_field :title, class: 'form-control'
+          %td.form-group
+            = ff.text_field :option_a, class: 'form-control'
+          %td.form-group
+            = ff.text_field :option_b, class: 'form-control'
+          %td.form-group
+            = ff.text_field :option_c, class: 'form-control'
+          %td.form-group
+            = ff.text_field :option_d, class: 'form-control'
+          %td.form-group
+            = ff.select :answer, [['Choose one', nil],
+               ['Option A', 'a'], ['Option B', 'b'], ['Option C', 'c'], ['Option D', 'd']], {}, {:class => 'form-control'}
+          %td.checkbox
             - if ff.object.persisted?
-              = ff.check_box :_destroy
+              = ff.check_box :_destroy, class: 'form-control'
+              = ff.label :_destroy
 
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', {:class => 'btn btn-info btn-lg'}

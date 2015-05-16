@@ -5,7 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', :git => 'https://github.com/zakelfassi/sass-rails' # For BootFlat
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -14,6 +15,11 @@ gem 'uglifier', '>= 1.3.0'
 #Replace ERB with cleaner HAML
 gem 'haml'
 gem "haml-rails", :group => :development
+
+# Use Flat UI as base
+# gem "bootstrap-rails"
+# gem "flat-ui-rails"
+gem 'bootflat-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
