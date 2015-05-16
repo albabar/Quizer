@@ -11,9 +11,12 @@
       .container-fluid
         .navbar-header
           %a.navbar-brand Quizer
-        %ul.nav.navbar-nav
-          %li Home
-          %li Topics
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              = link_to 'Home', root_path
+            %li
+              = link_to "Other page", "path/to/page.html"
     .container
       %p.notice= notice
       %p.alert= alert
